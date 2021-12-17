@@ -13,7 +13,8 @@ This is a test Rust project using the [Rust book](https://doc.rust-lang.org/book
 
 rand
 
-## CI stats
+## Stats
 
-![CI stats](https://github.com/derenv/hello-rust/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/derenv/hello-rust/actions/workflows/ci.yml/badge.svg)
 
+[![codecov](https://codecov.io/gh/derenv/hello-rust/branch/main/graph/badge.svg?token=PHDU5O3VFZ)](https://codecov.io/gh/derenv/hello-rust)
