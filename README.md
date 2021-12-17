@@ -2,7 +2,11 @@
 
 ## Description
 
-This is a test Rust project using the [Rust book](https://doc.rust-lang.org/book/) and [this tutorial](https://www.homeops.dev/continuous-integration-with-github-actions-and-rust/)
+This is a test Rust project using the [Rust book](https://doc.rust-lang.org/book/).
+
+Set up continuous integration using [this tutorial](https://www.homeops.dev/continuous-integration-with-github-actions-and-rust/) and [this github action](https://github.com/Swatinem/fucov).
+
+Created units tests using the [Rust book](https://doc.rust-lang.org/book/) and integration tests using [this example](https://github.com/psFried/testing-rust).
 
 ## Uses
 
@@ -17,4 +21,4 @@ rand
 
 ![CI](https://github.com/derenv/hello-rust/actions/workflows/ci.yml/badge.svg)
 
-[![codecov](https://codecov.io/gh/derenv/hello-rust/branch/main/graph/badge.svg?token=PHDU5O3VFZ)](https://codecov.io/gh/derenv/hello-rust)
+[![Test Coverage](https://codecov.io/gh/derenv/hello-rust/branch/main/graph/badge.svg?token=PHDU5O3VFZ)](https://codecov.io/gh/derenv/hello-rust)
