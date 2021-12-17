@@ -28,7 +28,7 @@ fn main() {
     let mut y = 6; //mutable: can be changed
     y *= 9;
     const _Z: i32 = 7; //constant: always immutable
-    //let _q = &x * &y; //x and y are used as references here
+                       //let _q = &x * &y; //x and y are used as references here
     let _q = x * y; //x and y are used as references here
 
     // Printing
@@ -104,7 +104,7 @@ fn main() {
     }
 }
 
-pub fn function_for_test1(x:i32) -> i32{
+pub fn function_for_test1(x: i32) -> i32 {
     println!("test runs OK ya dick");
     return x;
 }
@@ -113,12 +113,12 @@ pub fn function_for_test1(x:i32) -> i32{
  * Unit tests
  */
 #[cfg(test)]
-mod tests{
+mod tests {
     use super::*;
 
     #[test]
     fn unit_test_1() {
         let y: i32 = 23;
-        assert_eq!(23,function_for_test1(y));
+        assert_eq!(23, function_for_test1(y));
     }
 }
