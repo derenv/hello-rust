@@ -1,5 +1,4 @@
 // Imports
-use hello_rust;
 use std::cmp::Ordering;
 use std::io;
 
