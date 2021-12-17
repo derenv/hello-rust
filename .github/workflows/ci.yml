@@ -95,10 +95,10 @@ jobs:
           toolchain: ${{ env.RUST_TOOLCHAIN }}
           components: llvm-tools-preview
           override: true
-      - name: unknown
+      - name: Generate coverage
         # runs cargo with defaults flags, using the default `lcov` output
         uses: Swatinem/fucov@v1
-      - name: Generate coverage
+      - name: Upload coverage
         uses: codecov/codecov-action@v1
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
