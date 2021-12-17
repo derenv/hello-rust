@@ -12,3 +12,8 @@ This is a test Rust project using the [Rust book](https://doc.rust-lang.org/book
 ## Cargo Dependencies
 
 rand
+
+## CI stats
+
+![CI stats](https://github.com/derenv/hello-rust/actions/workflows/ci.yml/badge.svg)
+
