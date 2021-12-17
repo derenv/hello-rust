@@ -1,7 +1,7 @@
 // Imports
+use hello_rust;
 use std::cmp::Ordering;
 use std::io;
-use hello_rust;
 
 /*
  * Title:
@@ -17,17 +17,19 @@ use hello_rust;
  * none
  */
 fn main() {
-
     function_for_test1(0);
 
     variables(0, 0);
 
     string_input();
 
-    number_matching(hello_rust::generate_number_inclusive(1, 100), hello_rust::generate_number_inclusive(1, 100));
+    number_matching(
+        hello_rust::generate_number_inclusive(1, 100),
+        hello_rust::generate_number_inclusive(1, 100),
+    );
 
-    string_matching_eq("".to_string(),"".to_string());
-    string_matching_in("onete".to_string(),"te".to_string());
+    string_matching_eq("".to_string(), "".to_string());
+    string_matching_in("onete".to_string(), "te".to_string());
 
     bc_loop(0, 10);
 
@@ -59,7 +61,7 @@ fn function_for_test1(x: i32) -> i32 {
  *
  * Description:
  * Create different types of variable
- * 
+ *
  * preceding underscore means the variable is never used
  *
  * Parameters:
@@ -68,7 +70,7 @@ fn function_for_test1(x: i32) -> i32 {
  * Return Value:
  * none
  */
-fn variables(s: i32, t: i32) -> i32{
+fn variables(s: i32, t: i32) -> i32 {
     // This is how to declare variables
     let _x: i32 = 5; //immutable: can't be changed, will throw Err if you try
     let mut _y: i32 = 6; //mutable: can be changed
@@ -85,7 +87,7 @@ fn variables(s: i32, t: i32) -> i32{
  *
  * Description:
  * Get some string input and print
- * 
+ *
  * Take some string and trim newlines off
  *
  * also meant to example Result, an enum basically returned from every operation:
@@ -216,7 +218,7 @@ fn bc_loop(mut x: i32, y: i32) -> i32 {
 fn for_loop(x: i32, y: i32) -> i32 {
     let mut loops: i32 = 0;
     for z in x..y {
-        println!("{}",z);
+        println!("{}", z);
         loops += 1;
     }
 
@@ -266,15 +268,15 @@ mod tests {
     // variables
     #[test]
     fn unit_test_variables() {
-        assert_eq!(1, variables(1,1));
-        assert_eq!(8, variables(2,4));
-        assert_eq!(0, variables(0,4));
-        assert_eq!(0, variables(2,0));
-        assert_eq!(0, variables(0,0));
+        assert_eq!(1, variables(1, 1));
+        assert_eq!(8, variables(2, 4));
+        assert_eq!(0, variables(0, 4));
+        assert_eq!(0, variables(2, 0));
+        assert_eq!(0, variables(0, 0));
         println!("test runs OK");
     }
 
-    /* 
+    /*
      * string input
      *
      * this kind of test is hard to write.. you would generally fake such an input lol
@@ -288,24 +290,39 @@ mod tests {
     // number comparison
     #[test]
     fn unit_test_number_matching() {
-        assert_eq!(Ordering::Less, number_matching(1,2));
-        assert_eq!(Ordering::Greater, number_matching(2,1));
-        assert_eq!(Ordering::Equal, number_matching(1,1));
+        assert_eq!(Ordering::Less, number_matching(1, 2));
+        assert_eq!(Ordering::Greater, number_matching(2, 1));
+        assert_eq!(Ordering::Equal, number_matching(1, 1));
     }
 
     // string comparison 1
     #[test]
     fn unit_test_string_matching_eq() {
-        assert_eq!(true, string_matching_eq("one".to_string(),"one".to_string()));
-        assert_eq!(false, string_matching_eq("two".to_string(),"one".to_string()));
+        assert_eq!(
+            true,
+            string_matching_eq("one".to_string(), "one".to_string())
+        );
+        assert_eq!(
+            false,
+            string_matching_eq("two".to_string(), "one".to_string())
+        );
     }
 
     // string comparison 2
     #[test]
     fn unit_test_string_matching_in() {
-        assert_eq!(true, string_matching_in("one".to_string(),"one".to_string()));
-        assert_eq!(true, string_matching_in("onetwo".to_string(),"one".to_string()));
-        assert_eq!(false, string_matching_in("onetwo".to_string(),"three".to_string()));
+        assert_eq!(
+            true,
+            string_matching_in("one".to_string(), "one".to_string())
+        );
+        assert_eq!(
+            true,
+            string_matching_in("onetwo".to_string(), "one".to_string())
+        );
+        assert_eq!(
+            false,
+            string_matching_in("onetwo".to_string(), "three".to_string())
+        );
     }
 
     // break/continue loop until

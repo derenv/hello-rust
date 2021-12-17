@@ -30,7 +30,7 @@ pub fn function_for_test2(x: i32) -> i32 {
  * Return Value:
  * i32
  */
-pub fn generate_number_inclusive(x: i32, y: i32) -> i32{
+pub fn generate_number_inclusive(x: i32, y: i32) -> i32 {
     rand::thread_rng().gen_range(x..=y)
 }
 
@@ -48,7 +48,7 @@ pub fn generate_number_inclusive(x: i32, y: i32) -> i32{
  * Return Value:
  * i32
  */
-pub fn generate_number_exclusive(x: i32, y: i32) -> i32{
+pub fn generate_number_exclusive(x: i32, y: i32) -> i32 {
     rand::thread_rng().gen_range(x..y)
 }
 
@@ -58,7 +58,7 @@ pub fn generate_number_exclusive(x: i32, y: i32) -> i32{
  *
  * Description:
  * Print input string with any params
- * 
+ *
  * Also demonstrates None/Some matching
  *
  * Parameters:
@@ -73,9 +73,9 @@ pub fn printing(input_string: &str, param: Option<String>) {
     match param {
         None => {
             println!("{}", input_string);
-        },
+        }
         Some(nonnull_param) => {
             println!("{}{}", input_string, nonnull_param);
-        },
+        }
     }
 }
