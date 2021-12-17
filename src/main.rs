@@ -102,3 +102,22 @@ fn main() {
         }
     }
 }
+
+pub fn function_for_test1(x: i32) -> i32 {
+    println!("test runs OK ya dick");
+    return x;
+}
+
+/*
+ * Unit tests
+ */
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn unit_test_1() {
+        let y: i32 = 23;
+        assert_eq!(23, function_for_test1(y));
+    }
+}
