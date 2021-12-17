@@ -96,6 +96,9 @@ jobs:
           components: llvm-tools-preview
           override: true
       - name: Generate coverage
+        # runs cargo with defaults flags, using the default `lcov` output
+        uses: Swatinem/fucov@v1
+      - name: Upload coverage
         uses: codecov/codecov-action@v1
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
