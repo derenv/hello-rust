@@ -105,7 +105,7 @@ fn main() {
 
 pub fn function_for_test1(x: i32) -> i32 {
     println!("test runs OK ya dick");
-    return x;
+    x
 }
 
 /*
