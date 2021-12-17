@@ -26,8 +26,10 @@ fn main() {
     // This is how to declare variables
     let x = 5; //immutable: can't be changed, will throw Err if you try
     let mut y = 6; //mutable: can be changed
-    const z: i32 = 7; //constant: always immutable
-    let q = &x * &y; //x and y are used as references here
+    y *= 9;
+    const _Z: i32 = 7; //constant: always immutable
+    //let _q = &x * &y; //x and y are used as references here
+    let _q = x * y; //x and y are used as references here
 
     // Printing
     // NOTE: the '!' means this is a macro, not a function
@@ -50,7 +52,7 @@ fn main() {
     println!("You guessed {} dickwad!!", guess);
 
     let mut guess2: String = String::new();
-    guess2 = "fuck you ".to_string(); // text declared in double brackets are str references (like char arrays?)
+    //guess2 = "fuck you ".to_string(); // text declared in double brackets are str references (like char arrays?)
     io::stdin()
         .read_line(&mut guess2)
         .expect("Failed to read line!!!!");
