@@ -28,8 +28,7 @@ fn main() {
     let mut y = 6; //mutable: can be changed
     y *= 9;
     const _Z: i32 = 7; //constant: always immutable
-    //let _q = &x * &y; //x and y are used as references here
-    let _q = x * y; //x and y are used as references here
+    let _q = x * y; // using variables
 
     // Printing
     // NOTE: the '!' means this is a macro, not a function
