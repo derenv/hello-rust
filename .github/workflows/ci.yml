@@ -1,0 +1,82 @@
+name: Rust CI
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    branches: [ main ]
+    paths-ignore:
+      - '**.md'
+
+env:
+  CARGO_TERM_COLOR: always
+  RUST_TOOLCHAIN: stable
+  TOOLCHAIN_PROFILE: minimal
+
+jobs:
+  lints:
+    name: Run cargo fmt and cargo clippy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+      - name: Install toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: ${{ env.TOOLCHAIN_PROFILE }}
+          toolchain: ${{ env.RUST_TOOLCHAIN }}
+          override: true
+          components: rustfmt, clippy
+      - name: Run cargo fmt
+        uses: actions-rs/cargo@v1
+        with:
+          command: fmt
+          args: --all -- --check
+      - name: Run cargo clippy
+        uses: actions-rs/cargo@v1
+        with:
+          command: clippy
+          args: -- -D warnings
+  build:
+    name: Build using cargo
+    runs-on: ubuntu-latest
+    needs: [lints]
+    steps:
+      - name: Checkout sources
+      - uses: actions/checkout@v2
+      - name: Install toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: ${{ env.TOOLCHAIN_PROFILE }}
+          toolchain: ${{ env.RUST_TOOLCHAIN }}
+          override: true
+      - name: Run Build
+        uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --verbose
+  test:
+    name: Run cargo test
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+      - name: Install toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: ${{ env.TOOLCHAIN_PROFILE }}
+          toolchain: ${{ env.RUST_TOOLCHAIN }}
+          override: true
+      - name: Run cargo test -no-run
+        uses: actions-rs/cargo@v1
+        with:
+          command: test
+          args: --no-run --verbose
+      - name: Run cargo test
+        uses: actions-rs/cargo@v1
+        with:
+          command: test
+          args: --verbose
