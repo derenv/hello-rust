@@ -32,10 +32,9 @@ fn test_generate_number_exclusive() {
  *
  * this kind of test is hard to write.. you would generally fake such an output lol
  */
-//#[test]
-//fn test_printing() {
-//    assert_eq!(100, hello_rust::printing("fuck ".to_string(),"you".to_string()));
+#[test]
+fn test_printing() {
+    assert_eq!(Ok, hello_rust::printing("fuck ".to_string(), "you".to_string()));
 
-//    let x: i32 = hello_rust::generate_nuprintingmber_inclusive(0,100);
-//    assert!(x < 100 && x > 0);
-//}
+    assert_eq!(Ok, hello_rust::printing("fuck ".to_string(), None));
+}
