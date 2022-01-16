@@ -34,7 +34,10 @@ fn test_generate_number_exclusive() {
  */
 #[test]
 fn test_printing() {
-    assert_eq!(Ok, hello_rust::printing("fuck ".to_string(), "you".to_string()));
+    assert_eq!(
+        Ok,
+        hello_rust::printing("fuck ".to_string(), "you".to_string())
+    );
 
     assert_eq!(Ok, hello_rust::printing("fuck ".to_string(), None));
 }
