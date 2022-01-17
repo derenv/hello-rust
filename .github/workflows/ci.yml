@@ -76,6 +76,9 @@ jobs:
           toolchain: ${{ env.RUST_TOOLCHAIN }}
           components: x86_64-pc-windows-gnu
           override: true
+      - name: Install target info for rustup
+        run: |
+          rustup target add x86_64-pc-windows-gnu
       - name: Run Build for Windows
         uses: actions-rs/cargo@v1
         with:
