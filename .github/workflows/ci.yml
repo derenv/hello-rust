@@ -68,7 +68,7 @@ jobs:
       - name: Install toolchain
         uses: actions-rs/toolchain@v1
         with:
-          profile: ${{ env.TOOLCHAIN_PROFILE }}
+          profile: default
           toolchain: ${{ env.RUST_TOOLCHAIN }}
           components: x86_64-pc-windows-gnu
           override: true
