@@ -24,7 +24,6 @@ fn main() {
     io::stdin()
         .read_line(&mut some_input)
         .expect("Failed to read line!!!!");
-    
     some_input.trim().to_string();
 
     number_matching(
