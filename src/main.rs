@@ -20,7 +20,12 @@ fn main() {
 
     variables(0, 0);
 
-    string_input();
+    let mut some_input = String::new();
+    io::stdin()
+        .read_line(&mut some_input)
+        .expect("Failed to read line!!!!");
+    
+    some_input.trim().to_string();
 
     number_matching(
         hello_rust::generate_number_inclusive(1, 100),
@@ -78,39 +83,6 @@ fn variables(s: i32, t: i32) -> i32 {
     let q: i32 = s * t; // using variables
 
     q
-}
-
-/*
- * Title:
- * string_input
- *
- * Description:
- * Get some string input and print
- *
- * Take some string and trim newlines off
- *
- * also meant to example Result, an enum basically returned from every operation:
- * ie pass == 'Ok' and fail+reason == 'Err'
- *
- * Parameters:
- * none
- *
- * Return Value:
- * none
- */
-fn string_input() -> String {
-    // Input variable
-    let mut some_input = String::new();
-
-    // '&mut guess' creates a mutable reference
-    // IMPORTANT: read_line appends to passed
-    // this could have been called as 'std::io::stdin' without the import at line 2
-    io::stdin()
-        .read_line(&mut some_input)
-        .expect("Failed to read line!!!!");
-
-    // guess needs to be stripped of newlines
-    some_input.trim().to_string()
 }
 
 /*
@@ -274,17 +246,6 @@ mod tests {
         assert_eq!(0, variables(0, 0));
         println!("test runs OK");
     }
-
-    /*
-     * string input
-     *
-     * this kind of test is hard to write.. you would generally fake such an input lol
-     */
-    //#[test]
-    //fn unit_test_string_input() {
-    //    string_input();
-    //    assert_eq!("fuck", string_input());
-    //}
 
     // number comparison
     #[test]
