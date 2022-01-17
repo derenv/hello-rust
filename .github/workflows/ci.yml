@@ -63,12 +63,13 @@ jobs:
     runs-on: ubuntu-latest
     needs: [lints]
     steps:
+      - run: apt install mingw-w64-gcc
       - name: Checkout sources
         uses: actions/checkout@v2
       - name: Install toolchain
         uses: actions-rs/toolchain@v1
         with:
-          profile: default
+          profile: ${{ env.TOOLCHAIN_PROFILE }}
           toolchain: ${{ env.RUST_TOOLCHAIN }}
           components: x86_64-pc-windows-gnu
           override: true
