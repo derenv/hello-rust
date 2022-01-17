@@ -26,18 +26,3 @@ fn test_generate_number_exclusive() {
     let x: i32 = hello_rust::generate_number_exclusive(0, 101);
     assert!(x < 100 && x > 0);
 }
-
-/*
- * printing
- *
- * this kind of test is hard to write.. you would generally fake such an output lol
- */
-#[test]
-fn test_printing() {
-    assert_eq!(
-        Ok,
-        hello_rust::printing("fuck ".to_string(), "you".to_string())
-    );
-
-    assert_eq!(Ok, hello_rust::printing("fuck ".to_string(), None));
-}

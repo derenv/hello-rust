@@ -128,8 +128,8 @@ fn string_input() -> String {
  * bool
  */
 fn number_matching(x: i32, y: i32) -> Ordering {
-    hello_rust::printing("x: ", Some(x.to_string()));
-    hello_rust::printing("y: ", Some(y.to_string()));
+    println!("x: {}", x.to_string());
+    println!("y: {}", y.to_string());
     x.cmp(&y)
 }
 
