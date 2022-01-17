@@ -77,7 +77,6 @@ jobs:
         with:
           profile: ${{ env.TOOLCHAIN_PROFILE }}
           toolchain: ${{ env.RUST_TOOLCHAIN }}
-          components: x86_64-pc-windows-gnu
           override: true
       - name: Run Build for Windows
         uses: actions-rs/cargo@v1
