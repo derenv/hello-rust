@@ -99,8 +99,8 @@ fn variables(s: i32, t: i32) -> i32 {
  * bool
  */
 fn number_matching(x: i32, y: i32) -> Ordering {
-    println!("x: {}", x.to_string());
-    println!("y: {}", y.to_string());
+    println!("x: {}", x);
+    println!("y: {}", y);
     x.cmp(&y)
 }
 
